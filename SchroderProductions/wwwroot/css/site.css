@@ -1,4 +1,10 @@
-﻿ul {
+﻿
+
+
+/*dit is opmaak van de kalender*/
+
+
+ul {
     list-style-type: none;
 }
 
@@ -76,3 +82,5 @@ body {
             background: #1abc9c;
             color: white !important
         }
+
+        /*einde opmaak van kalender*/
