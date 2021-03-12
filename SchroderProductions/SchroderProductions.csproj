@@ -5,7 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\Privacy.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\img\foto.jfif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Home\Privacy.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.23" />
   </ItemGroup>
 
 </Project>
