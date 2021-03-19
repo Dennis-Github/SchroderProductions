@@ -28,7 +28,7 @@ namespace SchroderProductions.Controllers
             return View();
         }
 
-        public IActionResult Test()
+        public IActionResult Booking()
         {
             return View();
         }
