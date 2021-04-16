@@ -5,15 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Home\Privacy.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\img\foto.jfif" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Views\Home\Privacy.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
