@@ -65,7 +65,7 @@ namespace SchroderProductions.Controllers
             // return de lijst met namen
             return names;
         }
-                        public IActionResult Privacy()
+        public IActionResult Privacy()
         {
             return View();
         }
