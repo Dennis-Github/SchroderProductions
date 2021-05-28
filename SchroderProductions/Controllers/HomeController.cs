@@ -33,7 +33,7 @@ namespace SchroderProductions.Controllers
         public List<string> GetNames()
         {
             // stel in waar de database gevonden kan worden
-            string connectionString = "Server=informatica.st-maartenscollege.nl;Port=3306;Database=110062;Uid=110062;Pwd=Dennisenleon!;";
+            string connectionString = "Server=172.16.160.21;Port=3306;Database=110062;Uid=110062;Pwd=Dennisenleon!;";
 
             // maak een lege lijst waar we de namen in gaan opslaan
             List<string> names = new List<string>();
