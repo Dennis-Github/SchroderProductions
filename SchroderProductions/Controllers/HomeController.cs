@@ -65,10 +65,12 @@ namespace SchroderProductions.Controllers
             // return de lijst met namen
             return names;
         }
+       [Route("Privacy")]
         public IActionResult Privacy()
         {
             return View();
         }
+        [Route("Booking")]
         public IActionResult Booking()
         {
             return View();
