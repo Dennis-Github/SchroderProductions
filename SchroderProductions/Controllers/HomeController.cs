@@ -70,7 +70,12 @@ namespace SchroderProductions.Controllers
         {
             return View();
         }
-        [Route("Booking")]
+        [Route("Contact")]
+        public IActionResult Contact()
+        {
+            return View();
+        }
+            [Route("Booking")]
         public IActionResult Booking()
         {
             return View();
