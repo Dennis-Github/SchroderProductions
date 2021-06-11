@@ -1,15 +1,18 @@
-﻿<head>
-    <link rel="stylesheet" href="~/css/site - Copy.css" />
-</head>
+﻿
 @{
     ViewData["Title"] = "Contact";
 }
+<h1>
+    @ViewData["Title"]
+</h1>
 <div class="container">
-    <form action="action_page.php">
+    <form>
+
+
+
 
         <label for="Name">Name</label>
         <input type="text" id="Name" name="Name" placeholder="Your name..">
-
 
         <label for="country">Country</label>
         <select id="country" name="country">
@@ -266,5 +269,6 @@
         <input type="submit" value="Submit">
 
     </form>
+    <p>Hallo @ViewBag["Name"]</p>
 </div>
 

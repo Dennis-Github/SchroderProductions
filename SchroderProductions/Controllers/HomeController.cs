@@ -71,8 +71,10 @@ namespace SchroderProductions.Controllers
             return View();
         }
         [Route("Contact")]
-        public IActionResult Contact()
+        public IActionResult Contact(String Name)        
         {
+            ViewData["Name"] = Name;
+
             return View();
         }
             [Route("Booking")]
