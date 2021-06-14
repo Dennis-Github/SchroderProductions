@@ -1,13 +1,14 @@
-﻿@model List<string>
+﻿@using SchroderProductions.Controllers.Database
+@model List<Festival>
 @{ 
     ViewData["Title"] = "Home Page";
 } 
 
 <div class="text-center">
     <h1>Welkom bij onze website!</h1>
-    @foreach(string naam in Model)
+    @foreach(Festival p in Model)
     {
-        <p>@naam</p>
+        <p>@p.Naam - @p.Prijs - @p.Plaats</p>
     }
 </div>
     <h1>Schroder Productions</h1>

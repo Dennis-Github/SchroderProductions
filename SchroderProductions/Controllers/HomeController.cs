@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using SchroderProductions.Controllers.Database;
 
 namespace SchroderProductions.Controllers
 {
@@ -24,19 +25,19 @@ namespace SchroderProductions.Controllers
         public IActionResult Index()
         {
             // alle namen ophalen
-            var names = GetNames();
+            var products = GetProducts();
 
             // stop de namen in de html
-            return View(names);
+            return View(products);
         }
 
-        public List<string> GetNames()
+        public List<Festival> GetProducts()
         {
             // stel in waar de database gevonden kan worden
             string connectionString = "Server=172.16.160.21;Port=3306;Database=110062;Uid=110062;Pwd=Dennisenleon!;";
 
             // maak een lege lijst waar we de namen in gaan opslaan
-            List<string> names = new List<string>();
+            List<Festival> products = new List<Festival>();
 
             // verbinding maken met de database
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -45,7 +46,7 @@ namespace SchroderProductions.Controllers
                 conn.Open();
 
                 // SQL query die we willen uitvoeren
-                MySqlCommand cmd = new MySqlCommand("select * from product", conn);
+                MySqlCommand cmd = new MySqlCommand("select * from festival", conn);
 
                 // resultaat van de query lezen
                 using (var reader = cmd.ExecuteReader())
@@ -53,17 +54,23 @@ namespace SchroderProductions.Controllers
                     // elke keer een regel (of eigenlijk: database rij) lezen
                     while (reader.Read())
                     {
-                        // selecteer de kolommen die je wil lezen. In dit geval kiezen we de kolom "naam"
-                        string Name = reader["Naam"].ToString();
+                        Festival p = new Festival
+                        {
+                            // selecteer de kolommen die je wil lezen. In dit geval kiezen we de kolom "naam"
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Plaats = reader["Plaats"].ToString(),
+                            Naam = reader["Naam"].ToString(),
+                            Prijs = reader["Prijs"].ToString(),
+                        };
 
                         // voeg de naam toe aan de lijst met namen
-                        names.Add(Name);
+                        products.Add(p);
                     }
                 }
             }
 
             // return de lijst met namen
-            return names;
+            return products;
         }
        [Route("Privacy")]
         public IActionResult Privacy()

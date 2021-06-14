@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SchroderProductions.Controllers.Database
 {
-    public class Product
+    public class Festival
     {
         public int Id { get; set; }
 
@@ -13,6 +13,6 @@ namespace SchroderProductions.Controllers.Database
 
         public string Prijs { get; set; }
 
-        public int Beschikbaarheid { get; set; }
+        public string Plaats { get; set; }
     }
 }
