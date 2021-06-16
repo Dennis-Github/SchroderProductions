@@ -60,7 +60,8 @@ namespace SchroderProductions.Controllers
                             Id = Convert.ToInt32(reader["Id"]),
                             Plaats = reader["Plaats"].ToString(),
                             Naam = reader["Naam"].ToString(),
-                            Prijs = reader["Prijs"].ToString(),
+                            Prijs = Convert.ToInt32(reader["Prijs"]),
+                            Afbeelding = reader ["Afbeelding"].ToString(),
                         };
 
                         // voeg de naam toe aan de lijst met namen

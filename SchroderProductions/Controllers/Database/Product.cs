@@ -11,8 +11,10 @@ namespace SchroderProductions.Controllers.Database
 
         public string Naam { get; set; }
 
-        public string Prijs { get; set; }
+        public int Prijs { get; set; }
 
         public string Plaats { get; set; }
+
+        public string Afbeelding { get; set;}
     }
 }
