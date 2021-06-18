@@ -16,5 +16,7 @@ namespace SchroderProductions.Controllers.Database
         public string Plaats { get; set; }
 
         public string Afbeelding { get; set;}
+
+        public string Logo { get; set; }
     }
 }

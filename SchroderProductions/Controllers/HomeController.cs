@@ -62,6 +62,7 @@ namespace SchroderProductions.Controllers
                             Naam = reader["Naam"].ToString(),
                             Prijs = Convert.ToInt32(reader["Prijs"]),
                             Afbeelding = reader ["Afbeelding"].ToString(),
+                            Logo = reader ["Logo"].ToString(),
                         };
 
                         // voeg de naam toe aan de lijst met namen
