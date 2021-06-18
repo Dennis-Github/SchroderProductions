@@ -30,7 +30,15 @@ namespace SchroderProductions.Controllers
             // stop de namen in de html
             return View(products);
         }
+        [Route("festival/{id}")]
+        public IActionResult FestivalDetail(string id)
+        {
+            // alle namen ophalen
+            var products = GetFestivals();
 
+            // stop de namen in de html
+            return View(products);
+        }
         public List<Festival> GetFestivals()
         {
             // stel in waar de database gevonden kan worden
@@ -74,6 +82,7 @@ namespace SchroderProductions.Controllers
             // return de lijst met namen
             return products;
         }
+
         public Festival GetFestival(string id)
         {
             // stel in waar de database gevonden kan worden
