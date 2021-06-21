@@ -34,10 +34,10 @@ namespace SchroderProductions.Controllers
         public IActionResult FestivalDetail(string id)
         {
             // alle namen ophalen
-            var products = GetFestivals();
+            var festival = GetFestival(id);
 
             // stop de namen in de html
-            return View(products);
+            return View(festival);
         }
         public List<Festival> GetFestivals()
         {
