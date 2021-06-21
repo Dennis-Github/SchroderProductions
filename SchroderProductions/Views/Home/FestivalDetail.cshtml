@@ -1,7 +1,8 @@
-﻿<link rel="stylesheet" href="site.css">
-
+﻿@using SchroderProductions.Controllers.Database
+@model Festival
 @{
     ViewData["Title"] = "Festival Detail";
 }
-<h1>@ViewData["Title"]</h1>
-
+<p>@Model.Naam - @Model.Prijs - @Model.Plaats</p>
+<img src="@Model.Afbeelding" />
+<img src="@Model.Logo" />
