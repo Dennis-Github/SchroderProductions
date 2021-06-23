@@ -142,6 +142,8 @@ namespace SchroderProductions.Controllers
         public IActionResult Contact(String Name, String Country, String Subject)        
         {
             ViewData["Name"] = Name;
+            ViewData["Country"] = Country;
+            ViewData["Subject"] = Subject;
 
             return View();
         }
