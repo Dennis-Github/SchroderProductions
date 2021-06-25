@@ -10,11 +10,11 @@
         <div>
             Naam: <input type="text" name="Name" />
         </div>
-
+        @Html.ValidationMessageFor(m => m.Name)
         <div>
             Achternaam: <input type="text" name="LastName" />
         </div>
-
+        @Html.ValidationMessageFor(m => m.LastName)
         <div>
             <label for="country">Country</label>
             <select id="country" name="country">
@@ -266,7 +266,10 @@
                 <option value="Zimbabwe">Zimbabwe</option>
             </select>
         </div>
-
+        <div>
+            Email: <input type="text" name="Email" />
+        </div>
+        @Html.ValidationMessageFor(m => m.Email)
         <div>
             <label for="subject">Subject</label>
             <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
