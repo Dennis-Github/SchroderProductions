@@ -148,6 +148,13 @@ namespace SchroderProductions.Controllers
            
             return View(person);
         }
+        [Route("Succes")]
+        public IActionResult Succes()
+        {
+            return View(); 
+        }
+
+
             [Route("Booking")]
         public IActionResult Booking()
         {
