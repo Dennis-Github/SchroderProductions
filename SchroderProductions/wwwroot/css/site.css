@@ -80,3 +80,8 @@ body {
             color: white !important
         }
         /*einde opmaak van kalender*/
+
+
+.field-validation-error {
+    color: red;
+}

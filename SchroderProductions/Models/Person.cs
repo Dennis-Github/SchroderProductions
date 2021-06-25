@@ -9,12 +9,21 @@ namespace SchroderProductions.Models
     public class Person
     {
         [Required(ErrorMessage ="Vul een naam in")]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+
         [Required(ErrorMessage ="Vul een achternaam in")]
         public string LastName { get; set; }
-        [EmailAddress(ErrorMessage ="Vul een geldig Email in")]
+
+        [Required(ErrorMessage ="Vul een geldig emailadres in")]
+        [EmailAddress(ErrorMessage ="Vul een geldig emailadres in")]
+        
         public string Email { get; set; }
+
+        [Required(ErrorMessage ="Vul een datum in")]
+        public DateTime BirthDate { get; set; }
+
         public string Country { get; set; }
+        
         public string Subject { get; set; }
 
     }

@@ -8,13 +8,17 @@
 <div class="container">
     <form method="post">
         <div>
-            Naam: <input type="text" name="Name" />
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName)
+            @Html.ValidationMessageFor(m => m.FirstName)
         </div>
-        @Html.ValidationMessageFor(m => m.Name)
+
         <div>
-            Achternaam: <input type="text" name="LastName" />
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName)
+            @Html.ValidationMessageFor(m => m.LastName)
         </div>
-        @Html.ValidationMessageFor(m => m.LastName)
+
         <div>
             <label for="country">Country</label>
             <select id="country" name="country">
@@ -266,22 +270,28 @@
                 <option value="Zimbabwe">Zimbabwe</option>
             </select>
         </div>
+
         <div>
-            Email: <input type="text" name="Email" />
+            @Html.LabelFor(m => m.Email)
+            @Html.TextAreaFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
         </div>
-        @Html.ValidationMessageFor(m => m.Email)
+
         <div>
-            <label for="subject">Subject</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            @Html.LabelFor(m => m.Subject)
+            @Html.TextAreaFor(m => m.Subject)
+            @Html.ValidationMessageFor(m => m.Subject)
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.BirthDate)
+            @Html.TextBoxFor(m => m.BirthDate,new { type = "date" })
+            @Html.ValidationMessageFor(m => m.BirthDate)
         </div>
 
         <input type="submit" value="verstuur" />
 
     </form>
-    @if (Model != null)
-    {
-        <p>Hallo @Model.Name</p>
-    }
 
 </div>
 
