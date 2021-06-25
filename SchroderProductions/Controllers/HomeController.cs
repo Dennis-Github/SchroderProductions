@@ -139,13 +139,10 @@ namespace SchroderProductions.Controllers
 
         [HttpPost]
         [Route("Contact")]
-        public IActionResult Contact(String Name, String Country, String Subject)        
+        public IActionResult Contact(Person person)        
         {
-            ViewData["Name"] = Name;
-            ViewData["Country"] = Country;
-            ViewData["Subject"] = Subject;
-
-            return View();
+           
+            return View(person);
         }
             [Route("Booking")]
         public IActionResult Booking()
