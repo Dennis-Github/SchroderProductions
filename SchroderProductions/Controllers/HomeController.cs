@@ -17,6 +17,9 @@ namespace SchroderProductions.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        // stel in waar de database gevonden kan worden
+        string connectionString = "Server=172.16.160.21;Port=3306;Database=110062;Uid=110062;Pwd=Dennisenleon!;";
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -85,9 +88,6 @@ namespace SchroderProductions.Controllers
 
         public Festival GetFestival(string id)
         {
-            // stel in waar de database gevonden kan worden
-            string connectionString = "Server=172.16.160.21;Port=3306;Database=110062;Uid=110062;Pwd=Dennisenleon!;";
-
             // maak een lege lijst waar we de namen in gaan opslaan
             List<Festival> products = new List<Festival>();
 
@@ -143,11 +143,28 @@ namespace SchroderProductions.Controllers
         {
             if (ModelState.IsValid)
             {
+                SavePerson(person);
                 return Redirect("/succes");
             }
            
             return View(person);
         }
+        private void SavePerson(Person person)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(voornaam, achternaam, emailadres, bericht, geboortedatum) VALUES(?voornaam, ?achternaam, ?email, ?bericht, ?geboortedatum)", conn);
+
+                cmd.Parameters.Add("?voornaam", MySqlDbType.Text).Value = person.FirstName;
+                cmd.Parameters.Add("?achternaam", MySqlDbType.Text).Value = person.LastName;
+                cmd.Parameters.Add("?email", MySqlDbType.Text).Value = person.Email;
+                cmd.Parameters.Add("?bericht", MySqlDbType.Text).Value = person.Subject;
+                cmd.Parameters.Add("?geboortedatum", MySqlDbType.DateTime).Value = person.BirthDate;
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         [Route("Succes")]
         public IActionResult Succes()
         {

@@ -9,9 +9,11 @@ namespace SchroderProductions.Models
     public class Person
     {
         [Required(ErrorMessage ="Vul een naam in")]
+        [Display(Name = "Voornaam")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage ="Vul een achternaam in")]
+        [Display(Name = "Achternaam")]
         public string LastName { get; set; }
 
         [Required(ErrorMessage ="Vul een geldig emailadres in")]
